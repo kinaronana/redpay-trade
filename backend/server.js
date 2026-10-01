@@ -30,6 +30,7 @@ app.get('/api/health', (req, res) => {
 
 // Port Assignment Runtime Mapping
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`[RedPay Engine] Server running in secure state on port ${PORT}`);
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`[RedPay Engine] Server running in secure state on port ${PORT}`);
 });
