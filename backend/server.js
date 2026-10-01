@@ -8,11 +8,11 @@ const connectDB = require('./config/db.js');
 const app = express();
 
 // --- CORRECTION: Bulletproof CORS Configurations ---
-app.use(cors({
-    origin: "*", // Allows any frontend local port (5500, 3000, etc.) to connect
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(cors({ 
+    origin: "*", // Allows any frontend local port (5500, 3000, etc.) to connect 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    allowedHeaders: ["Content-Type", "Authorization"] 
+})); 
 
 app.use(express.json());
 
