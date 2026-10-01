@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedPay Trade - Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- Dashboard Header -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="RedPay Trade Logo" class="logo-img">
+        </div>
+        <nav>
+            <span id="user-display" style="color: #FFFFFF; font-weight: 600;">Loading User...</span>
+            <a href="#" id="logout-btn" class="btn-secondary" style="border-color: #E61E26; color: #E61E26 !important;">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="hero" style="grid-template-columns: 1.2fr 0.8fr; padding-top: 40px;">
+        
+        <!-- Left Side: Balances & Ledger -->
+        <div class="dashboard-main">
+            <h2 style="margin-bottom: 25px;">Your Wallets</h2>
+            
+            <!-- Multi-Currency Wallet Grid -->
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 40px;">
+                <div class="feature-card" style="border-left: 4px solid #E61E26;">
+                    <p style="text-transform: uppercase; font-size: 0.75rem; font-weight: 700;">US Dollar</p>
+                    <h3 style="font-size: 2rem; margin-top: 5px;">$<span id="bal-usd">0.00</span></h3>
+                </div>
+                <div class="feature-card" style="border-left: 4px solid #FFFFFF;">
+                    <p style="text-transform: uppercase; font-size: 0.75rem; font-weight: 700;">Euro</p>
+                    <h3 style="font-size: 2rem; margin-top: 5px;">€<span id="bal-eur">0.00</span></h3>
+                </div>
+                <div class="feature-card" style="border-left: 4px solid #E61E26;">
+                    <p style="text-transform: uppercase; font-size: 0.75rem; font-weight: 700;">Kenyan Shilling</p>
+                    <h3 style="font-size: 2rem; margin-top: 5px;">KSh <span id="bal-kes">0.00</span></h3>
+                </div>
+            </div>
+
+            <!-- Transaction Ledger -->
+            <div class="feature-card">
+                <h4 style="margin-bottom: 15px;">Recent Transaction History</h4>
+                <div id="offline-tag" style="background: #E61E26; color: white; display: none; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 15px; width: fit-content;">
+                    Viewing Cached Offline Data
+                </div>
+                <table style="width: 100%; border-collapse: collapse; text-align: left;" id="ledger-table">
+                    <thead>
+                        <tr style="color: #A0A0A5; border-bottom: 1px solid #232326;">
+                            <th style="padding: 10px 0;">Type</th>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ledger-body">
+                        <!-- Instantiated via JavaScript -->
+                        <tr style="border-bottom: 1px solid #232326; color: #A0A0A5;">
+                            <td style="padding: 15px 0;">No transactions recorded yet</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Right Side: Transfer Actions Panel -->
+        <div class="hero-widget">
+            <h3>Execute New Trade</h3>
+            <form id="transfer-form">
+                <div class="calc-group">
+                    <label>Recipient Account Reference</label>
+                    <input type="text" id="recipient-account" placeholder="Enter account details" style="font-size: 1.1rem; padding-top: 5px;">
+                </div>
+                <div class="calc-group">
+                    <label>Amount to Send</label>
+                    <input type="number" id="trade-amount" value="100">
+                    <select id="trade-currency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="KES">KES</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">Confirm & Settle Trade</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Execution Logic Links -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/wallet.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "short_name": "RedPay",
+  "name": "RedPay Trade Fintech Platform",
+  "icons": [
+    {
+      "src": "../assets/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#0B0B0C",
+  "theme_color": "#E61E26",
+  "display": "standalone",
+  "orientation": "portrait"
+}

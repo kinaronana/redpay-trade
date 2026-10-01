@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedPay Trade - Access Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="RedPay Trade Logo" class="logo-img">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <!-- Authentication Form Card Container -->
+    <main class="hero" style="grid-template-columns: 1fr; max-width: 500px; padding-top: 60px;">
+        <div class="hero-widget" id="auth-card">
+            <h3 id="auth-title" style="font-size: 1.8rem; margin-bottom: 10px; text-align: center;">Create Account</h3>
+            <p id="auth-subtitle" style="color: #A0A0A5; font-size: 0.9rem; text-align: center; margin-bottom: 30px;">Get started with multi-currency trading.</p>
+            
+            <form id="auth-form">
+                <!-- Name field visible only during registration -->
+                <div class="calc-group" id="name-group">
+                    <label>Full Name</label>
+                    <input type="text" id="auth-name" placeholder="John Doe">
+                </div>
+
+                <div class="calc-group">
+                    <label>Email Address</label>
+                    <input type="email" id="auth-email" placeholder="name@example.com" required style="font-size: 1.2rem;">
+                </div>
+
+                <div class="calc-group">
+                    <label>Secure Password</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" required style="font-size: 1.2rem;">
+                </div>
+
+                <button type="submit" id="auth-submit-btn" class="btn-primary" style="width: 100%; border: none; cursor: pointer; padding: 15px; font-size: 1rem; margin-top: 10px;">Sign Up</button>
+            </form>
+
+            <!-- Toggle between login and registration -->
+            <p style="text-align: center; margin-top: 25px; font-size: 0.9rem; color: #A0A0A5;">
+                <span id="toggle-text">Already have an account?</span> 
+                <a href="#" id="auth-toggle" style="color: #E61E26; font-weight: 600; margin-left: 5px;">Log In</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>

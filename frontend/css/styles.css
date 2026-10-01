@@ -1,0 +1,224 @@
+/* --- Core Color Theme Variables --- */
+:root {
+    --bg-black: #0B0B0C;
+    --card-dark: #141416;
+    --primary-red: #E61E26;
+    --primary-white: #FFFFFF;
+    --text-gray: #A0A0A5;
+    --border-color: #232326;
+}
+
+/* --- Global Reset & Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--primary-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* --- Header & Navbar Layout --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(11, 11, 12, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-img {
+    height: 45px;
+    object-fit: contain;
+    display: block;
+}
+
+nav a {
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+nav a:hover {
+    color: var(--primary-white);
+}
+
+/* --- Action Buttons --- */
+.btn-primary {
+    background-color: var(--primary-red);
+    color: var(--primary-white) !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #C0141B;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary-white);
+    color: var(--primary-white) !important;
+    padding: 9px 20px;
+    border-radius: 6px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-white);
+    color: var(--bg-black) !important;
+}
+
+/* --- Hero Showcase Section --- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 100px 5% 80px 5%;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    color: var(--text-gray);
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+/* --- Interactive Trading Calculator Element --- */
+.hero-widget {
+    background-color: var(--card-dark);
+    border: 1px solid var(--border-color);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.hero-widget h3 {
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+}
+
+.calc-group {
+    background-color: var(--bg-black);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: relative;
+}
+
+.calc-group label {
+    grid-column: 1 / span 2;
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.calc-group input {
+    background: transparent;
+    border: none;
+    color: var(--primary-white);
+    font-size: 1.6rem;
+    font-weight: 600;
+    outline: none;
+    width: 100%;
+}
+
+.calc-group select {
+    background-color: var(--card-dark);
+    color: var(--primary-white);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- Feature Grid Blocks --- */
+.features-section {
+    padding: 80px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--card-dark);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 12px;
+    transition: border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary-red);
+}
+
+.feature-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 968px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navbar {
+        padding: 15px 5%;
+    }
+}
