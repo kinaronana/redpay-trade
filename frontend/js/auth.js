@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth";
+const AUTH_API_URL = "https://redpay-trade-api.onrender.com/api/auth";
 
 document.addEventListener("DOMContentLoaded", () => {
     const userDisplay = document.getElementById("user-display");

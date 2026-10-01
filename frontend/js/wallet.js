@@ -1,4 +1,4 @@
-const WALLET_API_URL = "http://localhost:5000/api/wallet";
+const WALLET_API_URL = "https://redpay-trade-api.onrender.com/api/wallet";
 
 document.addEventListener("DOMContentLoaded", () => {
     const transferForm = document.getElementById("transfer-form");
