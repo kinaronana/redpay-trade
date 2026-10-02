@@ -1,4 +1,4 @@
-const AUTH_API_URL = "https://redpay-trade-api.onrender.com/api/auth";
+   const AUTH_API_URL = "/api/auth";
 
 document.addEventListener("DOMContentLoaded", () => {
     const userDisplay = document.getElementById("user-display");
@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 payload.name = document.getElementById("auth-name").value;
             }
 
-            console.log(`[API Request] Attempting POST to: ${API_URL}/${endpoint} with payload:`, payload);
+            console.log(`[API Request] Attempting POST to: ${AUTH_API_URL}/${endpoint} with payload:`, payload);
 
             try {
-                const response = await fetch(`${API_URL}/${endpoint}`, {
+                const response = await fetch(`${AUTH_API_URL}/${endpoint}`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
