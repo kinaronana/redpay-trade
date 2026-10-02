@@ -14,4 +14,4 @@ services:
   - type: web
     name: redpay-site
     runtime: static
-    staticPublishPath: ./public
+    staticPublishPath: ./frontend/public
