@@ -6,14 +6,14 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true }, // Encrypted hash string
     wallets: {
         USD: { type: Number, default: 1000.00 }, // Demo starter balances
-        EUR: { type: Number, default: 500.00 },
-        KES: { type: Number, default: 0.00 },
-        CNY: { type: Number, default: 0.00 },
-        TZS: { type: Number, default: 0.00 },
-        UGX: { type: Number, default: 0.00 },
-        AED: { type: Number, default: 0.00 }
+        EUR: { type: Number, default: 500.00 },  // Demo starter balances
+        KES: { type: Number, default: 100000.00 }, // Demo starter balances
+        CNY: { type: Number, default: 1000.00 }, // Demo starter balances
+        TZS: { type: Number, default: 1000000.00 }, // Demo starter balances
+        UGX: { type: Number, default: 100000.00 }, // Demo starter balances
+        AED: { type: Number, default: 1000.00 } // Demo starter balancescd backend
     },
     createdAt: { type: Date, default: Date.now }
 });
-
+console.log('[User model] wallet currencies:', Object.keys(UserSchema.paths).filter(p => p.startsWith('wallets.')));
 module.exports = mongoose.model('User', UserSchema);
