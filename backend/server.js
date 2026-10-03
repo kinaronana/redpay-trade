@@ -16,6 +16,7 @@ connectDB();
 // API routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/wallet', require('./routes/walletRoutes'));
+app.use('/api/rates', require('./routes/rateRoutes'));
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({

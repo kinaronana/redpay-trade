@@ -64,29 +64,28 @@
                 <div id="offline-tag" style="background: #E61E26; color: white; display: none; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 15px; width: fit-content;">
                     Viewing Cached Offline Data
                 </div>
-                <table style="width: 100%; border-collapse: collapse; text-align: left;" id="ledger-table">
-                    <thead>
-                        <tr style="color: #A0A0A5; border-bottom: 1px solid #232326;">
-                            <th style="padding: 10px 0;">Type</th>
-                            <th>Amount</th>
-                            <th>Currency</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ledger-body">
-                        <!-- Instantiated via JavaScript -->
-                        <tr style="border-bottom: 1px solid #232326; color: #A0A0A5;">
-                            <td style="padding: 15px 0;">No transactions recorded yet</td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>—</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;" id="ledger-table">
+                        <thead>
+                            <tr style="color: #A0A0A5; border-bottom: 1px solid #232326;">
+                                <th style="padding: 10px 0;">Type</th>
+                                <th>Details</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ledger-body">
+                            <tr style="border-bottom: 1px solid #232326; color: #A0A0A5;">
+                                <td colspan="5" style="padding: 15px 0;">Loading transactions…</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <!-- Right Side: Transfer Actions Panel -->
+        <!-- Right Side: Transfer + Convert Panel -->
         <div class="hero-widget">
             <h3>Execute New Trade</h3>
             <form id="transfer-form">
@@ -107,7 +106,41 @@
                         <option value="AED">AED</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">Confirm & Settle Trade</button>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">Confirm &amp; Settle Trade</button>
+            </form>
+
+            <hr style="border: 0; border-top: 1px solid #232326; margin: 30px 0;">
+
+            <h3>Convert Between Wallets</h3>
+            <form id="convert-form">
+                <div class="calc-group">
+                    <label>From</label>
+                    <input type="number" id="convert-amount" value="100" min="0.01" step="0.01" required>
+                    <select id="convert-from">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="KES">KES</option>
+                        <option value="CNY">CNY</option>
+                        <option value="TZS">TZS</option>
+                        <option value="UGX">UGX</option>
+                        <option value="AED">AED</option>
+                    </select>
+                </div>
+                <div class="calc-group">
+                    <label>To (you receive)</label>
+                    <input type="text" id="convert-result" readonly placeholder="Loading rates…">
+                    <select id="convert-to">
+                        <option value="KES">KES</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CNY">CNY</option>
+                        <option value="TZS">TZS</option>
+                        <option value="UGX">UGX</option>
+                        <option value="AED">AED</option>
+                    </select>
+                </div>
+                <p id="convert-rate-note" style="font-size: 0.8rem; color: #A0A0A5; margin: 8px 0 15px;"></p>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">Convert</button>
             </form>
         </div>
     </main>
@@ -116,4 +149,4 @@
     <script src="js/auth.js"></script>
     <script src="js/wallet.js"></script>
 </body>
-</html>CD
+</html>
